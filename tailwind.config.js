@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -22,9 +23,6 @@ module.exports = {
         exteriorHeroBg: "url('/images/hero.jpg')",
         heroSectionBg: "url('/images/herobg.jpg')",
         "payment-bg": "url('/images/payment-bg.webp')",
-      },
-      boxShadow: {
-        themeShadow: "inset 0 -10px 20px rgba(0,0,0,.3)",
       },
     },
   },

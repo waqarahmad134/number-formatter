@@ -1,30 +1,27 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState(""); // Input list
-  const [outputValue, setOutputValue] = useState(""); // Validated output list
-  const [count, setCount] = useState(0); // Count of valid numbers
+  const [inputValue, setInputValue] = useState("")
+  const [outputValue, setOutputValue] = useState("")
+  const [count, setCount] = useState(0)
 
   const handleConvert = () => {
-    // Regular Expression to match numbers starting with '92' and having exactly 12 digits
-    const validNumbers = inputValue.match(/92\d{10}/g);
-
-    // Update the right-side textarea with validated numbers, each on a new line
+    const validNumbers = inputValue.match(/92\d{10}/g)
     if (validNumbers) {
-      setOutputValue(validNumbers.join("\n"));
-      setCount(validNumbers.length); // Update count
+      setOutputValue(validNumbers.join("\n"))
+      setCount(validNumbers.length)
     } else {
-      setOutputValue("No valid numbers found");
-      setCount(0); // Reset count
+      setOutputValue("No valid numbers found")
+      setCount(0) 
     }
-  };
+  }
 
   const handleCopy = () => {
     navigator.clipboard
-      .writeText(outputValue) // Copy text to clipboard
+      .writeText(outputValue) 
       .then(() => alert("Copied to clipboard!"))
-      .catch((err) => console.error("Failed to copy:", err));
-  };
+      .catch((err) => console.error("Failed to copy:", err))
+  }
 
   return (
     <>
@@ -42,13 +39,13 @@ export default function Home() {
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder={`Enter your numbers here`}
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)} // Update state on input
+                onChange={(e) => setInputValue(e.target.value)} 
               ></textarea>
               <div className="mt-3 text-end">
                 <button
                   type="button"
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                  onClick={handleConvert} // Trigger conversion
+                  onClick={handleConvert} 
                 >
                   Convert
                 </button>
@@ -68,13 +65,13 @@ export default function Home() {
               disabled
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Valid numbers will appear here"
-              value={outputValue} // Display validated numbers
+              value={outputValue} 
             ></textarea>
             <div className="mt-3 text-end">
               <button
                 type="button"
                 className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800"
-                onClick={handleCopy} // Copy output to clipboard
+                onClick={handleCopy} 
               >
                 Copy
               </button>
@@ -83,5 +80,5 @@ export default function Home() {
         </div>
       </div>
     </>
-  );
+  )
 }
