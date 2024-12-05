@@ -1,8 +1,6 @@
-
 /** @type {import('tailwindcss').Config} */
-const flowbite = require("flowbite-react/tailwind");
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -25,10 +23,10 @@ module.exports = {
         heroSectionBg: "url('/images/herobg.jpg')",
         "payment-bg": "url('/images/payment-bg.webp')",
       },
-      boxShadow:{
-        themeShadow:"inset 0 -10px 20px rgba(0,0,0,.3)"
-      }
+      boxShadow: {
+        themeShadow: "inset 0 -10px 20px rgba(0,0,0,.3)",
+      },
     },
   },
-  plugins: [flowbite.plugin()],
+  plugins: [],
 };
