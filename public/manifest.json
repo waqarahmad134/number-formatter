@@ -1,0 +1,37 @@
+{
+  "background_color": "#ffffff",
+  "description": "Watch and download the latest and classic Indian movies in HD quality on videosroom.com. Enjoy a vast collection of Hindi movies, from new releases to timeless classics, all available for online streaming and download.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "videosroom",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "videosroom",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://videosroom.com/logo512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "https://videosroom.com/logo.png",
+      "type": "image/png",
+      "sizes": "609x318"
+    },
+    
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "id": "videosroom",
+  "categories": [
+    "entertainment"
+  ]
+}
