@@ -8,11 +8,12 @@ export default function Home() {
   const handleConvert = () => {
     const validNumbers = inputValue.match(/92\d{10}/g)
     if (validNumbers) {
-      setOutputValue(validNumbers.join("\n"))
-      setCount(validNumbers.length)
+      const uniqueNumbers = [...new Set(validNumbers)]; 
+      setOutputValue(uniqueNumbers.join("\n"));
+      setCount(uniqueNumbers.length);
     } else {
-      setOutputValue("No valid numbers found")
-      setCount(0) 
+      setOutputValue("No valid numbers found");
+      setCount(0);
     }
   }
 
