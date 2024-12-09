@@ -1,15 +1,25 @@
 import React, { useState } from "react"
 import Header from "../components/Header"
 
-export default function Home() {
+export default function GoogleNumbers() {
   const [inputValue, setInputValue] = useState("")
   const [outputValue, setOutputValue] = useState("")
   const [count, setCount] = useState(0)
 
   const handleConvert = () => {
-    const validNumbers = inputValue.match(/92\d{10}/g)
+    // Remove commas from the input
+    const sanitizedInput = inputValue.replace(/,/g, "")
+
+    // Extract valid numbers starting with 3 and exactly 10 digits
+    const validNumbers = sanitizedInput
+      .match(/(?:\D|^)(3\d{9})(\d+)?(?:\D|$)/g)
+      ?.map((match) => {
+        const number = match.match(/3\d{9}/)?.[0]
+        return number ? `92${number}` : null
+      })
+
     if (validNumbers) {
-      const uniqueNumbers = [...new Set(validNumbers)]
+      const uniqueNumbers = [...new Set(validNumbers.filter(Boolean))]
       setOutputValue(uniqueNumbers.join("\n"))
       setCount(uniqueNumbers.length)
     } else {
